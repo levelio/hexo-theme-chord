@@ -1,0 +1,20 @@
+extends _partial/layout
+
+block title
+  if page.category
+     title= page.category + " | " + config.title
+  if page.tag
+     title= page.tag + " | " + config.title
+  if page.archive
+     title= __('archive') + " | " + config.title
+
+block content
+  .post__achive
+    each posts, year in _.groupBy(page.posts.toArray(), p => - p.date.format('YYYY'))
+      h2= -year
+      ul.achive__list
+        for post in posts
+          li
+            span.achive__item__date= post.date.format('YYYY/MM/DD')
+            a(href=url_for(post.path), title=post.title)= post.title
+  include _partial/paginator

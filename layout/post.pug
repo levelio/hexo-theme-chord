@@ -1,0 +1,19 @@
+extends _partial/layout
+
+block title
+  title= `${page.title} | ${config.title}`
+
+block content
+  article.content__post
+    h1.post__title= page.title
+    .post__date= page.date.format(config.date_format)
+    section !{page.content}
+    if page.tags
+      .post__tags
+        for tag in page.tags.toArray()
+          a(href=url_for(tag.path))= tag.name
+  include _partial/paginator_post
+
+
+block comment
+  include _partial/comment

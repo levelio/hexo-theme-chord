@@ -1,0 +1,13 @@
+since: 2014 ## 站点起始时间
+logo: images/logo.png ## logo 图片
+duoshuo: chordblog ## Your duoshuo_shortname
+ga: UA-62344719-1 ## Your Google Analytics tracking id
+menu:
+  - page: home
+    directory: /
+  - page: archive
+    directory: archives/
+  - page: about
+    directory: about/
+  - page: rss
+    directory: atom.xml

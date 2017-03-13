@@ -1,0 +1,13 @@
+nav.header
+  div.site__name
+    h1.logo
+      a(href='#')
+        img(src=url_for(theme.logo) alt="logo").
+  ul.menu
+    each menu in theme.menu
+      li.menu__item
+        a(href=url_for(menu.directory))= __(menu.page)
+
+
+
+
